@@ -1,12 +1,18 @@
-import 'package:assignment_project/shopping_bag.dart';
+
 import 'package:flutter/material.dart';
 
 
 import 'home_page.dart';
+import 'shopping_bag.dart';
 
-class Shoes_1 extends StatelessWidget {
+class Shoes_1 extends StatefulWidget {
   const Shoes_1({Key? key}) : super(key: key);
 
+  @override
+  State<Shoes_1> createState() => _Shoes_1State();
+}
+
+class _Shoes_1State extends State<Shoes_1> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -105,7 +111,9 @@ class Shoes_1 extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.only(left: 25, top: 0),
                              child: IconButton(onPressed: () {
+                                setState(() {
 
+                                });
                              }, icon: Icon(
                                Icons.favorite_border,
                                color: Colors.red,
@@ -121,7 +129,15 @@ class Shoes_1 extends StatelessWidget {
                         scrollDirection: Axis.horizontal,
                         child: Row(
                           children: [
-                            Image.asset('assets/images/Shoes1.png',width: 311,height: 198,),
+
+                            Image.asset('assets/images/Shoes1.png',width: 290,height: 198,),
+                            Padding(
+                              padding: const EdgeInsets.only(right: 100),
+                              child: IconButton(onPressed: () {
+
+                              }, icon: Icon(Icons.arrow_circle_right_outlined,size: 30,color: Colors.cyan,),),
+
+                            ),
                             Image.asset('assets/images/Shoes1.png',width: 311,height: 198,),
                             Image.asset('assets/images/Shoes1.png',width: 311,height: 198,),
                             Image.asset('assets/images/Shoes1.png',width: 311,height: 198,),
@@ -176,7 +192,7 @@ class Shoes_1 extends StatelessWidget {
                         ),
                       );
                     }),
-                    Icon(Icons.arrow_circle_right_outlined)
+
                   ],
                 ),
               ),

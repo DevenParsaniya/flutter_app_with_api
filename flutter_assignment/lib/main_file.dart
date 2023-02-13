@@ -73,51 +73,63 @@ class _Main_FileState extends State<Main_File> {
       ),
       body: widgetsList[SelectedIndex],
        bottomNavigationBar:
-       //ClipRRect(
-        // borderRadius:  BorderRadius.only(
-        //   topRight: Radius.circular(50),
-        //   topLeft: Radius.circular(50),
-        // ),
-        // child:
-        DecoratedBox(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(500))
-          ),
-          child: BottomNavigationBar(
-            currentIndex: _selectedIndex,
-            unselectedItemColor: Colors.grey,
-            selectedItemColor: Colors.cyan[800],
-            onTap: (index) {
-              setState(
-                () {
-                  SelectedIndex = index;
-                  _onItemTapped(index);
-                },
-              );
-            },
-            items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.home_outlined,
-                ),
-                label: "",
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.chat_bubble_outline,
-                ),
-                label: "",
-              ),
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.favorite_border_outlined), label: ""),
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.shopping_bag_outlined), label: ""),
-              BottomNavigationBarItem(icon: Icon(Icons.person), label: ""),
-            ],
-            backgroundColor: Colors.black,
-          ),
-        ),
+       Container(
 
+         color: Color.fromARGB(210, 178, 240, 255),
+         child: Padding(
+           padding: const EdgeInsets.all(2.0),
+           child: ClipRRect(
+            borderRadius:  BorderRadius.only(
+              topRight: Radius.circular(40),
+              topLeft: Radius.circular(40),
+            ),
+            child:
+            // Container(
+            //   child: DecoratedBox(
+            //     decoration: BoxDecoration(
+            //       borderRadius: BorderRadius.all(Radius.circular(50))
+            //     ),
+            //
+            //     child:
+                BottomNavigationBar(
+                  currentIndex: _selectedIndex,
+                  unselectedItemColor: Colors.grey,
+                  selectedItemColor: Colors.cyan[800],
+                  onTap: (index) {
+                    setState(
+                      () {
+                        SelectedIndex = index;
+                        _onItemTapped(index);
+                      },
+                    );
+                  },
+                  items: const <BottomNavigationBarItem>[
+                    BottomNavigationBarItem(
+                      icon: Icon(
+                        Icons.home_outlined,
+                      ),
+                      label: "",
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(
+                        Icons.chat_bubble_outline,
+                      ),
+                      label: "",
+                    ),
+                    BottomNavigationBarItem(
+                        icon: Icon(Icons.favorite_border_outlined), label: ""),
+                    BottomNavigationBarItem(
+                        icon: Icon(Icons.shopping_bag_outlined), label: ""),
+                    BottomNavigationBarItem(icon: Icon(Icons.person), label: ""),
+                  ],
+                  backgroundColor: Colors.black,
+                ),
+
+
+
+           ),
+         ),
+       ),
     );
   }
 }
