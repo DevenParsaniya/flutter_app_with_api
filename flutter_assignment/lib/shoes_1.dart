@@ -1,5 +1,6 @@
+import 'package:assignment_project/shopping_bag.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_assignment/shopping_bag.dart';
+
 
 import 'home_page.dart';
 
@@ -174,7 +175,8 @@ class Shoes_1 extends StatelessWidget {
                           ],
                         ),
                       );
-                    })
+                    }),
+                    Icon(Icons.arrow_circle_right_outlined)
                   ],
                 ),
               ),
