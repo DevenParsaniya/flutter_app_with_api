@@ -137,6 +137,8 @@ class _Home_PageState extends State<Home_Page> {
                     ));
                   },
                   child: Card(
+                    shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30))),
                     child: Column(
                       children: [
                         Row(
