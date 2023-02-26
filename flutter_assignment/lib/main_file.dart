@@ -1,7 +1,7 @@
+import 'package:api_assignment/pages/add_data.dart';
+import 'package:api_assignment/pages/home_page.dart';
+import 'package:api_assignment/pages/shopping_bag.dart';
 import 'package:flutter/material.dart';
-
-import 'home_page.dart';
-import 'shopping_bag.dart';
 
 class Main_File extends StatefulWidget {
   const Main_File({Key? key}) : super(key: key);
@@ -39,7 +39,10 @@ class _Main_FileState extends State<Main_File> {
         style: TextStyle(fontSize: 50),
       )),
     ),
+    // Add_Data(),
   ];
+
+
 
   void _onItemTapped(int index) {
     setState(() {
@@ -72,64 +75,61 @@ class _Main_FileState extends State<Main_File> {
         ],
       ),
       body: widgetsList[SelectedIndex],
-       bottomNavigationBar:
-       Container(
-
-         color: Color.fromARGB(210, 178, 240, 255),
-         child: Padding(
-           padding: const EdgeInsets.all(2.0),
-           child: ClipRRect(
-            borderRadius:  BorderRadius.only(
-              topRight: Radius.circular(40),
-              topLeft: Radius.circular(40),
+      bottomNavigationBar: Container(
+        color: Color.fromARGB(210, 178, 240, 255),
+        child: Padding(
+          padding: const EdgeInsets.all(2.0),
+          child: ClipRRect(
+            borderRadius: BorderRadius.only(
+              topRight: Radius.circular(30),
+              topLeft: Radius.circular(30),
             ),
             child:
-            // Container(
-            //   child: DecoratedBox(
-            //     decoration: BoxDecoration(
-            //       borderRadius: BorderRadius.all(Radius.circular(50))
-            //     ),
-            //
-            //     child:
+                // Container(
+                //   child: DecoratedBox(
+                //     decoration: BoxDecoration(
+                //       borderRadius: BorderRadius.all(Radius.circular(50))
+                //     ),
+                //
+                //     child:
                 BottomNavigationBar(
-                  currentIndex: _selectedIndex,
-                  unselectedItemColor: Colors.grey,
-                  selectedItemColor: Colors.cyan[800],
-                  onTap: (index) {
-                    setState(
-                      () {
-                        SelectedIndex = index;
-                        _onItemTapped(index);
-                      },
-                    );
+              currentIndex: _selectedIndex,
+              unselectedItemColor: Colors.grey,
+              selectedItemColor: Colors.cyan[800],
+              onTap: (index2) {
+                setState(
+                  () {
+                    SelectedIndex = index2;
+                    _onItemTapped(index2);
                   },
-                  items: const <BottomNavigationBarItem>[
-                    BottomNavigationBarItem(
-                      icon: Icon(
-                        Icons.home_outlined,
-                      ),
-                      label: "",
-                    ),
-                    BottomNavigationBarItem(
-                      icon: Icon(
-                        Icons.chat_bubble_outline,
-                      ),
-                      label: "",
-                    ),
-                    BottomNavigationBarItem(
-                        icon: Icon(Icons.favorite_border_outlined), label: ""),
-                    BottomNavigationBarItem(
-                        icon: Icon(Icons.shopping_bag_outlined), label: ""),
-                    BottomNavigationBarItem(icon: Icon(Icons.person), label: ""),
-                  ],
-                  backgroundColor: Colors.black,
+                );
+              },
+              items: const <BottomNavigationBarItem>[
+                BottomNavigationBarItem(
+                  icon: Icon(
+                    Icons.home_outlined,
+                  ),
+                  label: "",
                 ),
-
-
-
-           ),
-         ),
-       ),
+                BottomNavigationBarItem(
+                  icon: Icon(
+                    Icons.chat_bubble_outline,
+                  ),
+                  label: "",
+                ),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.favorite_border_outlined), label: ""),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.shopping_bag_outlined), label: ""),
+                BottomNavigationBarItem(icon: Icon(Icons.person), label: ""),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.add_box_outlined), label: ""),
+              ],
+              backgroundColor: Colors.black,
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
